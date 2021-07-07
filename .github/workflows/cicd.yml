@@ -26,16 +26,21 @@ jobs:
       - name: Analyze project source
         run: dart analyze --fatal-infos
 
-      - name: Checkout backend repository
-        uses: actions/checkout@v2
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
         with:
-          repository: 'Dennis-Krasnov/Fitness-Driven-Backend'
-          token: ${{ secrets.GH_PAT }}
-          path: backend
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Log in to DigitalOcean Container Registry with short-lived credentials
+        run: doctl registry login --expiry-seconds 600
 
       - name: Run backend in background
-        run: cargo run &
-        working-directory: backend
+        run: |
+          LATEST_TAG=doctl registry repository list-tags fitness-driven-monolith | tail --lines=+2 - | head --lines=1 | awk '{print $1;}'
+          podman run -d \
+            -p 8080:8080 \
+            registry.digitalocean.com/krasnov/fitness-driven-monolith:$LATEST_TAG
+          sleep 1
 
       - name: Run tests
         run: flutter test
