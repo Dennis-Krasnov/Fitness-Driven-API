@@ -1,7 +1,7 @@
 name: fitness_driven_api
-description: Idiomatic Dart bindings for the Fitness Driven API.
+description: Idiomatic Dart bindings to interface the Fitness Driven backend.
 version: 0.0.3
-homepage: https://github.com/Dennis-Krasnov/Fitness-Driven-API
+homepage: https://pub.dev/documentation/fitness_driven_api/latest
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  http: ^0.13.3
 
 dev_dependencies:
   flutter_test:

@@ -15,7 +15,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v1
         with:
-          channel: 'stable' # or: 'beta', 'dev' or 'master'
+          channel: stable
 
       - name: Install dependencies
         run: flutter pub get
@@ -25,7 +25,17 @@ jobs:
 
       - name: Analyze project source
         run: dart analyze --fatal-infos
-        
+
+      - name: Checkout backend repository
+        uses: actions/checkout@v2
+        with:
+          repository: 'Dennis-Krasnov/Fitness-Driven-Backend'
+          path: backend
+
+      - name: Start backend in background
+        run: cargo run &
+        working-directory: backend
+
       - name: Run tests
         run: flutter test
 

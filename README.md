@@ -1,6 +1,4 @@
-# fitness_driven_api
-
-A new Flutter package.
+# Fitness Driven API - Idiomatic Dart bindings for the Fitness Driven API.
 
 ## Getting Started
 
@@ -12,3 +10,14 @@ multiple Flutter or Dart projects.
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+
+## TODO
+[] AndroidManifest.xml: https://flutter.dev/docs/cookbook/networking/fetch-data
+
+[] Python shell:
+- name: Display the path
+    run: |
+      import os
+      print(os.environ['PATH'])
+    shell: python
