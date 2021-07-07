@@ -30,7 +30,7 @@ jobs:
         run: flutter test
 
       - name: Log into pub.dev
-        run: echo $CREDENTIALS | base64 -d > ~/.pub-cache/credentials.json
+        run: echo $CREDENTIALS | base64 -d > $PUB_CACHE/credentials.json
         env:
           CREDENTIALS: ${{ secrets.PUB_DEV_CREDENTIALS }}
 
