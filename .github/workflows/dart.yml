@@ -28,10 +28,11 @@ jobs:
         
       - name: Run tests
         run: flutter test
-        
+
+      - name: Log into pub.dev
+        run: echo $CREDENTIALS | base64 -d > ~/.pub-cache/credentials.json
+        env:
+          CREDENTIALS: ${{ secrets.PUB_DEV_CREDENTIALS }}
+
       - name: Publish package to pub.dev
-        uses: k-paxian/dart-package-publisher@master
-        with:
-          accessToken: ${{ secrets.PUB_DEV_ACCESS_TOKEN }}
-          refreshToken: ${{ secrets.PUB_DEV_REFRESH_TOKEN }}
-          skipTests: true
+        run: flutter pub publish
