@@ -30,6 +30,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'Dennis-Krasnov/Fitness-Driven-Backend'
+          token: ${{ secrets.GH_PAT }}
           path: backend
 
       - name: Run backend in background
