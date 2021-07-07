@@ -1,0 +1,36 @@
+name: Continous Integration and Deployment
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build_test_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable' # or: 'beta', 'dev' or 'master'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze project source
+        run: dart analyze --fatal-infos
+        
+      - name: Run tests
+        run: flutter test
+        
+      - name: Log in to pub.dev
+        run: echo TODO
+        
+      - name: Publish package
+        run: flutter pub publish --dry-run
