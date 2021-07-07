@@ -36,10 +36,9 @@ jobs:
 
       - name: Run backend in background
         run: |
-          LATEST_TAG=doctl registry repository list-tags fitness-driven-monolith | tail --lines=+2 - | head --lines=1 | awk '{print $1;}'
           podman run -d \
             -p 8080:8080 \
-            registry.digitalocean.com/krasnov/fitness-driven-monolith:$LATEST_TAG
+            registry.digitalocean.com/krasnov/fitness-driven-monolith:6afeac08b463e5faaeccbad2729a56c45907fede
           sleep 1
 
       - name: Run tests

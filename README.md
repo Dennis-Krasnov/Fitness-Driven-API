@@ -21,3 +21,5 @@ samples, guidance on mobile development, and a full API reference.
       import os
       print(os.environ['PATH'])
     shell: python
+
+[] Add latest to every docker image
