@@ -35,4 +35,4 @@ jobs:
           CREDENTIALS: ${{ secrets.PUB_DEV_CREDENTIALS }}
 
       - name: Publish package to pub.dev
-        run: flutter pub publish
+        run: echo y | flutter pub publish

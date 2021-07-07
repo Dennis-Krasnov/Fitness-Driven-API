@@ -1,2 +1,2 @@
-## 0.0.2
-* Setting up the project
+## 0.0.3
+* Setting up the project with CI/CD
