@@ -14,7 +14,8 @@ class FoodDiary {
     var response = await http.get(
       url,
       headers: {
-        "X-IDENTITY": "eyJ1aWQiOiJib2IxMjMiLCJuYW1lIjoiQm9iIDEyMyIsImVtYWlsIjoiYm9iMTIzQGdtYWlsLmNvbSIsImlzX2FkbWluIjpmYWxzZX0=",
+        "X-IDENTITY":
+            "eyJ1aWQiOiJib2IxMjMiLCJuYW1lIjoiQm9iIDEyMyIsImVtYWlsIjoiYm9iMTIzQGdtYWlsLmNvbSIsImlzX2FkbWluIjpmYWxzZX0=",
       },
     );
     return response.body;

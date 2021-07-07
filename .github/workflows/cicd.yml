@@ -32,7 +32,7 @@ jobs:
           repository: 'Dennis-Krasnov/Fitness-Driven-Backend'
           path: backend
 
-      - name: Start backend in background
+      - name: Run backend in background
         run: cargo run &
         working-directory: backend
 
