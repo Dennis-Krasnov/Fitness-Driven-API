@@ -15,7 +15,9 @@ jobs:
       - name: Cache Flutter
         uses: actions/cache@v2
         with:
-          path: /opt/hostedtoolcache/flutter
+          path: |
+            /opt/hostedtoolcache/flutter
+            build/test_cache
           key: ${{ runner.os }}-flutter-${{ matrix.api-version }}
 
       - name: Setup Flutter
