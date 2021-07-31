@@ -28,7 +28,7 @@ class FoodDiary {
       );
 
       return result.data.toString();
-    } catch(e) {
+    } catch (e) {
       print(e);
       return "fail lol";
     }
