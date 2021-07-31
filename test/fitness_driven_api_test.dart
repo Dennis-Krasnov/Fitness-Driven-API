@@ -15,10 +15,10 @@ void main() {
     expect(await foodDiary.getRequest(), "hi");
   });
 
-  test("should make a post request", () async {
-    final foodDiary = FoodDiary();
-    const xIdentity =
-        "eyJ1aWQiOiJib2IxMjMiLCJuYW1lIjoiQm9iIDEyMyIsImVtYWlsIjoiYm9iMTIzQGdtYWlsLmNvbSIsImlzX2FkbWluIjpmYWxzZX0=";
-    expect(await foodDiary.postRequest(xIdentity), "it was \"$xIdentity\"");
-  });
+  // test("should make a post request", () async {
+  //   final foodDiary = FoodDiary();
+  //   const xIdentity =
+  //       "eyJ1aWQiOiJib2IxMjMiLCJuYW1lIjoiQm9iIDEyMyIsImVtYWlsIjoiYm9iMTIzQGdtYWlsLmNvbSIsImlzX2FkbWluIjpmYWxzZX0=";
+  //   expect(await foodDiary.postRequest(xIdentity), "it was \"$xIdentity\"");
+  // });
 }
